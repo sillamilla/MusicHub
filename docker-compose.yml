@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./internal/config/redis.conf:/usr/local/etc/redis/redis.conf
+
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./internal/config/mongo.conf:/etc/mongo.conf
